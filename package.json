@@ -1,4 +1,25 @@
 {
+  "name": "team-profile-gen",
+  "version": "1.0.0",
+  "description": "Team profile generator for development",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GerusHays/Team-Profile-Gen.git"
+  },
+  "keywords": [],
+  "author": "GerusHays",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GerusHays/Team-Profile-Gen/issues"
+  },
+  "homepage": "https://github.com/GerusHays/Team-Profile-Gen#readme",
   "dependencies": {
     "inquirer": "^8.2.4"
   }
