@@ -5,9 +5,23 @@ test('initiates the engineer instance', () => {
     expect(typeof(emp)).toBe("object");
 });
 
+test('creates the engineers githubusername', () => {
+    const testing = 'githubusername';
+    const emp= new Engineer('Gerus', 1, 'random@random.com', testing);
+
+    expect(emp.github).toBe(testing);
+});
+
+test('get the engineers githubusername from getGithub()', () => {
+    const testing = 'githubusername';
+    const emp= new Engineer('Gerus', 1, 'random@random.com', testing);
+
+    expect(emp.getGithub()).toBe(testing);
+})
+
 test('getRole() should return Engineer', () => {
     const testing = 'Engineer';
-    const emp = new Engineer('Gerus', 1, 'random@random.com');
+    const emp = new Engineer('Gerus', 1, 'random@random.com', 'githubusername');
 
     expect(emp.getRole()).toBe(testing);
 });
