@@ -15,11 +15,18 @@ function init() {
 
 // function for adding team members
 function newTeamMember() {
-    inquirer.prompt([
-    {
+    inquirer.prompt([{
         type: "input",
         name: "teamMemberName",
-        message: "Enter the team member's name."
+        message: "Enter the team member's name.",
+        validate: teamMemberNameInput => {
+            if (teamMemberNameInput) {
+                return true;
+            } else {
+                console.log('Please enter the name of your team member.');
+                return false;
+            }
+        }
     },
     {
         name: "teamMemberRole",
@@ -34,15 +41,60 @@ function newTeamMember() {
     {
         type: "input",
         name: "teamMemberId",
-        message: "Enter your team member's ID."
+        message: "Enter your team member's ID.",
+        validate: teamMemberIdInput => {
+            if (teamMemberIdInput) {
+                return true;
+            } else {
+                console.log('Please enter your team members Id number.');
+                return false;
+            }
+        }
     },
     {
         type: "input",
         name: "teamMemberEmail",
-        message: "Enter your team member's email."
-    },
-    ]).then(function({ teamMemberName, teamMemberRole, teamMemberId, teamMemberEmail }) {
-
+        message: "Enter your team member's email.",
+        validate: teamMemberEmailInput => {
+            if (teamMemberEmailInput) {
+                return true;
+            } else {
+                console.log('Please enter your team members email');
+                return false;
+            }
+        },
+    }]).then(function({ teamMemberName, teamMemberRole, teamMemberId, teamMemberEmail }) {
+        let roleInput = "";
+        if(teamMemberRole === "Manager") {
+            roleInput = "officeNumber";
+        } else if(teamMemberRole === "Engineer") {
+            roleInput = "githubusername"
+        } else {
+            roleInput = "school"
+        }
+        inquirer.prompt([{
+            type: "input",
+            name: "roleInput",
+            message: `Enter team member's ${roleInput}`,
+            validate: roleUserInput => {
+                if(roleUserInput) {
+                    return true;
+                } else {
+                    console.log('Please enter the role office number, github, or school as applicable.');
+                    return false;
+                }
+            }
+        },
+        {
+            name: "additionalTeamMember",
+            type: "list",
+            choices: [
+                "yes",
+                "no"
+            ],
+        }]).then(function({ roleInput, additionalTeamMember }) {
+            
+        })
     })
 
 }
