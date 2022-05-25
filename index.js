@@ -3,6 +3,7 @@
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const Template = require("./src/page-template"); 
 const inquirer = require("inquirer");
 const fs = require("fs");
 
@@ -93,11 +94,21 @@ function newTeamMember() {
                 "no"
             ],
         }]).then(function({ roleInput, additionalTeamMember }) {
-            
-        })
-    })
+            let addMember;
+            if(teamMemberRole === "Manager") {
+                addMember = new Manager(teamMemberName, teamMemberId, teamMemberEmail, roleInput);
+            } else if(teamMemberRole === "Engineer") {
+                addMember = new Engineer(teamMemberName, teamMemberId, teamMemberEmail, roleInput);
+            } else {
+                addMember = new Intern(teamMemberName, teamMemberId, teamMemberEmail, roleInput);
+            }
+            employees.push(addMember);
+            console.log(teamMemberName, employees);
+        });
+    });
+};
 
-}
+
     
 
 
