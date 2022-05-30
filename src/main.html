@@ -1,32 +1,4 @@
-const Employee = require("../lib/Employee");
-
-const generateTeam = team => {
-    const generateManager = manager => {
-
-    }
-
-    const generateEngineer = engineer => {
-
-    }
-
-    const generateIntern = intern => {
-
-    }
-    // pushes the html to display the content based on the role selected by the user
-    const html = [];
-
-    html.push(team.filter(employee => employee.getRole() === "Manager").map(manager => generateManager(manager))
-    );
-    html.push(team.filter(employee => employee.getRole() === "Engineer").map(engineer => generateEngineer(engineer)).join("")
-    );
-    html.push(team.filter(employee => employee.getRole() === "Intern").map(intern => generateIntern(intern)).join("")
-    );
-
-    return html.join("");
-}
-// the main html page will display without the roles
-module.exports = team => {
-return `<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -50,11 +22,10 @@ return `<!DOCTYPE html>
     <div class="container">
         <div class="row">
             <div class="teams col-12 d-flex justify-content-center">
-                ${generateTeam(team)}
+
             </div>
         </div>
     </div>
         
 </body>
-</html>`
-};
+</html>

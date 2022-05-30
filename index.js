@@ -107,13 +107,4 @@ function newTeamMember() {
         });
     });
 };
-
-
-    
-
-
-// create a function for generating a Manager
-// inquirer prompt 
-// using manager classes
-
 init();
