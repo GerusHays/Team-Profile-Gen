@@ -21,13 +21,37 @@ const generateTeam = team => {
 
     const generateEngineer = engineer => {
         return `
-        
+        <div class="card members">
+            <div class="card-header">
+        <h2 class="card-title">${engineer.getName()}</h2>
+        <h3 class="card-title"><i class="fas fa-brain mr-1">${engineer.getRole()}</i></h3>
+        </div>
+            <div class="card-body">
+                 <ul class="list-group">
+                    <li class="list-group-item">ID: ${engineer.getId()}</li>
+                     <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+                    <li class="list-group-item">Github: <a href="https://github.com/${engineer.getGitHub()}"target="_blank">${engineer.getGitHub()}</a></li>
+                </ul>
+             </div>
+        </div>
         `;
     };
 
     const generateIntern = intern => {
         return `
-        
+        <div class="card members">
+            <div class="card-header">
+        <h2 class="card-title">${intern.getName()}</h2>
+        <h3 class="card-title"><i class="fas fa-book-open mr-1">${intern.getRole()}</i></h3>
+        </div>
+            <div class="card-body">
+                 <ul class="list-group">
+                    <li class="list-group-item">ID: ${intern.getId()}</li>
+                     <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+                    <li class="list-group-item">Office Number: ${intern.getOfficeNumber()}</li>
+                </ul>
+             </div>
+        </div>
         `;
     };
     // pushes the html to display the content based on the role selected by the user
