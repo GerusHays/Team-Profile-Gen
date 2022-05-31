@@ -2,16 +2,34 @@ const Employee = require("../lib/Employee");
 
 const generateTeam = team => {
     const generateManager = manager => {
-
-    }
+        return `
+        <div class="card members">
+            <div class="card-header">
+        <h2 class="card-title">${manager.getName()}</h2>
+        <h3 class="card-title"><i class="fab fa-blogger-b mr-1">${manager.getRole()}</i></h3>
+        </div>
+            <div class="card-body">
+                 <ul class="list-group">
+                    <li class="list-group-item">ID: ${manager.getId()}</li>
+                     <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+                    <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
+                </ul>
+             </div>
+        </div>
+        `;
+    };
 
     const generateEngineer = engineer => {
-
-    }
+        return `
+        
+        `;
+    };
 
     const generateIntern = intern => {
-
-    }
+        return `
+        
+        `;
+    };
     // pushes the html to display the content based on the role selected by the user
     const html = [];
 
@@ -56,5 +74,6 @@ return `<!DOCTYPE html>
     </div>
         
 </body>
-</html>`
+</html>
+`;
 };
