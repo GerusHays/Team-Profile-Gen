@@ -104,6 +104,21 @@ function newTeamMember() {
             }
             employees.push(addMember);
             console.log(teamMemberName, employees);
+            if(additionalTeamMember == "yes") {
+                newTeamMember();
+            } else {
+                let generateHtml = Template(employees)
+                fs.writeFile('./dist/index.html',
+                generateHtml,
+                function(err) {
+                    if(err) {
+                    console.log(err);
+                    } else {
+                    console.log('file saved');
+                    };
+                }
+                );
+            }
         });
     });
 };

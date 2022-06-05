@@ -5,8 +5,8 @@ const generateTeam = team => {
         return `
         <div class="card members">
             <div class="card-header">
-        <h2 class="card-title">${manager.getName()}</h2>
-        <h3 class="card-title"><i class="fab fa-blogger-b mr-1">${manager.getRole()}</i></h3>
+        <h2 class="card-title text-center">${manager.getName()}</h2>
+        <h3 class="card-title text-center"><i class="fab fa-blogger-b mr-1">${manager.getRole()}</i></h3>
         </div>
             <div class="card-body">
                  <ul class="list-group">
@@ -23,14 +23,14 @@ const generateTeam = team => {
         return `
         <div class="card members">
             <div class="card-header">
-        <h2 class="card-title">${engineer.getName()}</h2>
-        <h3 class="card-title"><i class="fas fa-brain mr-1">${engineer.getRole()}</i></h3>
+        <h2 class="card-title text-center">${engineer.getName()}</h2>
+        <h3 class="card-title text-center"><i class="fas fa-brain mr-1">${engineer.getRole()}</i></h3>
         </div>
             <div class="card-body">
                  <ul class="list-group">
                     <li class="list-group-item">ID: ${engineer.getId()}</li>
                      <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-                    <li class="list-group-item">Github: <a href="https://github.com/${engineer.getGitHub()}"target="_blank">${engineer.getGitHub()}</a></li>
+                    <li class="list-group-item">Github: <a href="https://github.com/${engineer.getGithub()}"target="_blank">${engineer.getGithub()}</a></li>
                 </ul>
              </div>
         </div>
@@ -41,8 +41,8 @@ const generateTeam = team => {
         return `
         <div class="card members">
             <div class="card-header">
-        <h2 class="card-title">${intern.getName()}</h2>
-        <h3 class="card-title"><i class="fas fa-book-open mr-1">${intern.getRole()}</i></h3>
+        <h2 class="card-title text-center">${intern.getName()}</h2>
+        <h3 class="card-title text-center"><i class="fas fa-book-open mr-1">${intern.getRole()}</i></h3>
         </div>
             <div class="card-body">
                  <ul class="list-group">
@@ -84,7 +84,7 @@ return `<!DOCTYPE html>
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-12 jumbotron mb-3 fs-1">
+            <div class="col-12 jumbotron mb-3 fs-1 bg-warning">
                 <h1 class="text-center">Our Team</h1>
             </div>
         </div>
