@@ -1,10 +1,11 @@
+// requires the manager.js file for tests
 const Manager = require('../lib/Manager');
-
+// initiates the manager object instance for tests
 test('initiates the manager instance', () => {
     const emp = new Manager();
     expect(typeof(emp)).toBe("object");
 });
-
+// test strings are self explanatory
 test('creates an manager officeNumber', () => {
     const testing = '555-123-4567';
     const emp = new Manager('Gerus', 1, 'random@random.com', testing);
