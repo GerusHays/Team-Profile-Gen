@@ -64,6 +64,7 @@ function newTeamMember() {
                 return false;
             }
         },
+        // .then for selecting the specific roles
     }]).then(function({ teamMemberName, teamMemberRole, teamMemberId, teamMemberEmail }) {
         let roleInput = "";
         if(teamMemberRole === "Manager") {
@@ -93,6 +94,7 @@ function newTeamMember() {
                 "yes",
                 "no"
             ],
+            // .then for adding any additional team members
         }]).then(function({ roleInput, additionalTeamMember }) {
             let addMember;
             if(teamMemberRole === "Manager") {
@@ -102,10 +104,13 @@ function newTeamMember() {
             } else {
                 addMember = new Intern(teamMemberName, teamMemberId, teamMemberEmail, roleInput);
             }
+            // pushes the addmembers to employees
             employees.push(addMember);
             console.log(teamMemberName, employees);
+            // if they select yes it will rerun the function so the user can select the variables for that role
             if(additionalTeamMember == "yes") {
                 newTeamMember();
+            // else if they dont want to add any more members it will save and generate the file
             } else {
                 let generateHtml = Template(employees)
                 fs.writeFile('./dist/index.html',
